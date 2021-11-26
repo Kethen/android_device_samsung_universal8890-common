@@ -57,6 +57,4 @@ get_prop(system_server, userspace_reboot_exported_prop)
 get_prop(system_server, userspace_reboot_config_prop)
 get_prop(system_server, vendor_radio_prop)
 
-unix_socket_connect(system_server, property, gpsd)
-
 dontaudit system_server persist_block_device:blk_file { getattr ioctl open read write };

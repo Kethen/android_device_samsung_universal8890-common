@@ -30,3 +30,8 @@ allow init fwk_sensor_hwservice:hwservice_manager find;
 allow init hidl_base_hwservice:hwservice_manager add;
 
 unix_socket_connect(init, property, rild)
+
+# props
+set_prop(init, vendor_init_adb_prop)
+set_prop(init, vendor_init_crypto_prop)
+set_prop(init, vendor_init_mst_prop)
