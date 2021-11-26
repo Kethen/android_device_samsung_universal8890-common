@@ -6,3 +6,12 @@ type vendor_hwc_prop, property_type;
 
 # NFC
 type vendor_nfc_prop, property_type;
+
+# adb
+type vendor_init_adb_prop, property_type;
+
+# crypto
+type vendor_init_crypto_prop, property_type;
+
+# mst
+type vendor_init_mst_prop, property_type;
