@@ -350,6 +350,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.3-service.samsung
 
+# mcDriverDaemon wants protobuf lite libs
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-lite.vendor \
+    symlinks-universal8890-common
+
 # VNDK prebuilts
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-lite-v29.so \
@@ -384,3 +389,4 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
 
 # call the proprietary setup
 $(call inherit-product, vendor/samsung/universal8890-common/universal8890-common-vendor.mk)
+

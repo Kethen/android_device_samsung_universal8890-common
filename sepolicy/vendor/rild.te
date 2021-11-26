@@ -28,25 +28,21 @@ allow rild init:dir search;
 allow rild init:file r_file_perms;
 
 allow rild {
-    media_rw_data_file
     mnt_user_file
     mnt_vendor_file
     storage_file
 }:dir r_dir_perms;
 
 allow rild {
-    radio_data_file
     radio_vendor_data_file
 }:dir rw_dir_perms;
 
 allow rild {
-    radio_data_file
     radio_vendor_data_file
 }:file create_file_perms;
 
 allow rild {
     mnt_user_file
-    radio_data_file
     storage_file
 }:lnk_file r_file_perms;
 
