@@ -1,17 +1,18 @@
 # Camera
-type vendor_camera_prop, property_type;
+system_vendor_config_prop(vendor_camera_prop)
 
 # HWC
-type vendor_hwc_prop, property_type;
+system_vendor_config_prop(vendor_hwc_prop)
 
 # NFC
-type vendor_nfc_prop, property_type;
+system_public_prop(vendor_nfc_prop)
 
 # adb
-type vendor_init_adb_prop, property_type;
+system_vendor_config_prop(vendor_init_adb_prop)
 
 # crypto
-type vendor_init_crypto_prop, property_type;
+system_vendor_config_prop(vendor_init_crypto_prop)
 
 # mst
-type vendor_init_mst_prop, property_type;
+system_vendor_config_prop(vendor_init_mst_prop)
+

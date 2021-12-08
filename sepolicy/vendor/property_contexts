@@ -31,3 +31,4 @@ ro.crypto.fuse_sdcard            u:object_r:vendor_init_crypto_prop:s0
 
 # mst prop
 ro.mst.support                   u:object_r:vendor_init_mst_prop:s0
+
