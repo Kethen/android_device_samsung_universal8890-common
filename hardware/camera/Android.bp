@@ -23,7 +23,8 @@ cc_library_shared {
     shared_libs: [
         "libhardware",
         "liblog",
-        "libcamera_client",
+        "libcamera_metadata",
+        "libcamera_client_vendor",
         "libutils",
         "libcutils",
         "android.hidl.token@1.0-utils",

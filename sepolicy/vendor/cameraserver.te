@@ -11,7 +11,6 @@ allow cameraserver sysfs_camera:chr_file rw_file_perms;
 # /data/camera/ISP_CV
 allow cameraserver{
     camera_data_file
-    camera_vendor_data_file
 }:file r_file_perms;
 
 # /data/media(/.*)?

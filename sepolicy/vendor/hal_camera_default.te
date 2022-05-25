@@ -5,8 +5,6 @@ allow hal_camera_default debugfs_ion:dir search;
 allow hal_camera_default camera_vendor_data_file:dir rw_dir_perms;
 allow hal_camera_default camera_vendor_data_file:file create_file_perms;
 
-allow hal_camera_default media_rw_data_file:dir search;
-
 allow hal_camera_default sysfs_camera:dir search;
 
 allow hal_camera_default {
