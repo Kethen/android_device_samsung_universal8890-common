@@ -136,7 +136,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <!--
     <hal format="hidl">
         <name>android.hardware.neuralnetworks</name>
         <transport>hwbinder</transport>
@@ -146,7 +145,6 @@
             <instance>armnn</instance>
         </interface>
     </hal>
-    -->
     <hal format="hidl">
         <name>android.hardware.radio</name>
         <transport>hwbinder</transport>

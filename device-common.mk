@@ -112,8 +112,8 @@ PRODUCT_PACKAGES += \
     resize2fs_static
 
 # Fingerprint
-#PRODUCT_PACKAGES += \
-#    android.hardware.biometrics.fingerprint@2.3-service.samsung
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.3-service.samsung
 
 # FlipFlap
 PRODUCT_PACKAGES += \
