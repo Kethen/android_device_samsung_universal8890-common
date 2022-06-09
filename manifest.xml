@@ -17,7 +17,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <!--
     <hal format="hidl">
         <name>android.hardware.biometrics.fingerprint</name>
         <transport>hwbinder</transport>
@@ -27,7 +26,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    -->
     <hal format="hidl">
         <name>android.hardware.bluetooth</name>
         <transport>hwbinder</transport>
@@ -165,7 +163,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <!--
     <hal format="hidl">
         <name>android.hardware.neuralnetworks</name>
         <transport>hwbinder</transport>
@@ -175,7 +172,6 @@
             <instance>armnn</instance>
         </interface>
     </hal>
-    -->
     <hal format="hidl">
         <name>android.hardware.power</name>
         <transport>hwbinder</transport>
