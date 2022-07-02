@@ -18,3 +18,6 @@ type vendor_init_mst_prop, property_type;
 
 # radio
 type clatd_radio_prop, property_type;
+
+# audio
+type vendor_audio_prop, property_type;
