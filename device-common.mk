@@ -17,10 +17,10 @@
 COMMON_PATH := device/samsung/universal8890-common
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
-PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    device/samsung/universal8890-common/overlay/hardware/samsung/AdvancedDisplay
+#DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
+#PRODUCT_ENFORCE_RRO_TARGETS := *
+#PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+#    device/samsung/universal8890-common/overlay/hardware/samsung/AdvancedDisplay
 
 # Boot animation
 TARGET_BOOTANIMATION_PRELOAD := true
@@ -30,8 +30,8 @@ TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
 
 # AdvancedDisplay (MDNIE)
-PRODUCT_PACKAGES += \
-    AdvancedDisplay
+#PRODUCT_PACKAGES += \
+#    AdvancedDisplay
 
 # Additional native libraries
 PRODUCT_COPY_FILES += \
@@ -78,8 +78,8 @@ PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
     camera.device@3.3-impl \
     camera.device@3.4-impl \
-    camera.exynos5 \
-    Snap
+    camera.exynos5
+    #Snap
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/sysconfig/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
@@ -113,7 +113,7 @@ PRODUCT_PACKAGES += \
 
 # FlipFlap
 PRODUCT_PACKAGES += \
-    FlipFlap
+#    FlipFlap
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -205,10 +205,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libnfc-nci \
     libnfc_nci_jni \
-    NfcNci \
-    Tag \
     com.android.nfc_extras \
     android.hardware.nfc@1.2-service.samsung
+    #NfcNci \
+    #Tag \
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/nfc/libnfc-sec-vendor.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-sec-vendor.conf \
@@ -282,10 +282,10 @@ PRODUCT_PACKAGES += \
     ueventd.samsungexynos8890.rc
 
 # RCS
-PRODUCT_PACKAGES += \
-    com.android.ims.rcsmanager \
-    PresencePolling \
-    RcsService
+#PRODUCT_PACKAGES += \
+#    com.android.ims.rcsmanager \
+#    PresencePolling \
+#    RcsService
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
@@ -308,8 +308,8 @@ PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/ril/spn-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/spn-conf.xml
 
 # SamsungDoze
-PRODUCT_PACKAGES += \
-    SamsungDoze
+#PRODUCT_PACKAGES += \
+#    SamsungDoze
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -366,16 +366,16 @@ PRODUCT_PACKAGES += \
     wifilogd \
     wlutil \
     libwpa_client \
-    TetheringConfigOverlay \
     wpa_supplicant \
     wpa_supplicant.conf \
     android.hardware.wifi@1.0 \
     android.hardware.wifi@1.0-impl \
     android.hardware.wifi@1.0-service
+    #TetheringConfigOverlay \
 
 # Vendor ovrelay
-PRODUCT_PACKAGES += \
-    treble-overlay-samsung-heroxlte
+#PRODUCT_PACKAGES += \
+#    treble-overlay-samsung-heroxlte
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/wifi/cred.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/cred.conf \
