@@ -960,7 +960,7 @@ on property:vold.decrypt=trigger_restart_framework
     mkdir /data/misc/mcRegistry 0775 system system
 
 # LPM
-service charger /system/bin/lpm
+service charger /vendor/bin/lpm
     class sec-charger
     user system
     group system radio graphics input    
