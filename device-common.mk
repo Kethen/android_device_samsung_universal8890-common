@@ -86,7 +86,7 @@ PRODUCT_COPY_FILES += \
 
 # Charger
 PRODUCT_PACKAGES += \
-    libsuspend
+    libsuspend.vendor
 
 # DRM
 PRODUCT_PACKAGES += \
