@@ -40,10 +40,6 @@ LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(VENDOR_OUT_PATH)
 LOCAL_MODULE_TAGS := optional
 LOCAL_POST_INSTALL_CMD := echo creating symlinks to $(VENDOR_OUT_PATH) ;\
-  ln -sf libgui_vendor.so $(VENDOR_OUT_PATH)/lib/libgui.so ;\
-  ln -sf libgui_vendor.so $(VENDOR_OUT_PATH)/lib64/libgui.so ;\
-  ln -sf libcamera_client_vendor.so $(VENDOR_OUT_PATH)/lib/libcamera_client.so ;\
-  ln -sf libcamera_client_vendor.so $(VENDOR_OUT_PATH)/lib64/libcamera_client.so ;\
   ln -sf libprotobuf-cpp-lite-3.9.1.so $(VENDOR_OUT_PATH)/lib/libprotobuf-cpp-lite.so ;\
   ln -sf libprotobuf-cpp-lite-3.9.1.so $(VENDOR_OUT_PATH)/lib64/libprotobuf-cpp-lite.so
 include $(BUILD_PREBUILT)
