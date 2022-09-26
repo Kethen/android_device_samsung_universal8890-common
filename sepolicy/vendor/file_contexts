@@ -7,6 +7,7 @@
 /(vendor|system/vendor)/bin/hw/gpsd           u:object_r:gpsd_exec:s0
 /(vendor|system/vendor)/bin/hw/lhd            u:object_r:lhd_exec:s0
 /(vendor|system/vendor)/bin/hw/macloader      u:object_r:macloader_exec:s0
+/(vendor|system/vendor)/bin/hw/wifiloader     u:object_r:wifiloader_exec:s0
 
 # files in /system
 /vendor/bin/lpm                               u:object_r:charger_exec:s0
@@ -245,3 +246,8 @@
 # USB 
 /sys/devices/virtual/host_notify/usb_otg(/.*)?    u:object_r:sysfs_usb_otg:s0
 /sys/devices/virtual/usb_notify/usb_control(/.*)? u:object_r:sysfs_usb_otg:s0
+
+####################################
+# 16.0 wifi
+/sys/module/dhd/parameters/nvram_path             u:object_r:sysfs_wifi_writable:s0
+/proc/deferred_initcalls                          u:object_r:sysfs_wifi:s0
