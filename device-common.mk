@@ -280,7 +280,8 @@ PRODUCT_PACKAGES += \
     init.samsung.rc \
     init.samsungexynos8890.rc \
     init.samsungexynos8890.usb.rc \
-    ueventd.samsungexynos8890.rc
+    ueventd.samsungexynos8890.rc \
+    utpower.rc
 
 # RCS
 PRODUCT_PACKAGES += \

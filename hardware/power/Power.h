@@ -63,6 +63,7 @@ struct Power : public IPower, public ILineagePower {
     void setProfile(PowerProfile profile);
     void sendBoostpulse();
     void sendBoost(int duration_us);
+    void setProfileFromProp();
 
     bool initialized;
     PowerProfile current_profile;

@@ -21,3 +21,6 @@ type clatd_radio_prop, property_type;
 
 # audio
 type vendor_audio_prop, property_type;
+
+# power
+type vendor_power_prop, property_type;

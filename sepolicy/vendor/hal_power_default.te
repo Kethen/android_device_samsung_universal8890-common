@@ -17,3 +17,5 @@ allow hal_power_default{
     sysfs_light
     sysfs_sec_tsp
 }:file rw_file_perms;
+
+get_prop(hal_power_default, vendor_power_prop)

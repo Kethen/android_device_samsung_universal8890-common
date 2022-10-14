@@ -64,3 +64,11 @@ LOCAL_MODULE_CLASS	:= ETC
 LOCAL_SRC_FILES     := etc/ueventd.samsungexynos8890.rc
 LOCAL_MODULE_PATH	:= $(TARGET_OUT_VENDOR)
 include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE		:= utpower.rc
+LOCAL_MODULE_TAGS	:= optional
+LOCAL_MODULE_CLASS	:= ETC
+LOCAL_SRC_FILES     := etc/utpower.rc
+LOCAL_MODULE_PATH	:= $(TARGET_OUT_VENDOR_ETC)/init
+include $(BUILD_PREBUILT)

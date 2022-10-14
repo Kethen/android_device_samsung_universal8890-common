@@ -18,11 +18,13 @@
 
 #include "Power.h"
 #include <android-base/logging.h>
+#include <cutils/properties.h>
 #include <filesystem>
 #include <fstream>
 #include <iostream>
 #include "samsung_lights.h"
 #include "samsung_power.h"
+
 
 namespace android {
 namespace hardware {
@@ -48,27 +50,35 @@ static T get(const std::string& path, const T& def) {
     return file.fail() ? def : result;
 }
 
+void Power::setProfileFromProp() {
+    char property_value[PROP_VALUE_MAX];
+    int len = property_get("8890.power_profile", property_value, "");
+    if(len < 1 || len == PROP_VALUE_MAX){
+    	return;
+    }
+    if(strcmp(property_value, "power_save") == 0){
+        setProfile(PowerProfile::POWER_SAVE);
+    }
+    if(strcmp(property_value, "balanced") == 0){
+        setProfile(PowerProfile::BALANCED);
+    }
+    if(strcmp(property_value, "high_performance") == 0){
+        setProfile(PowerProfile::HIGH_PERFORMANCE);
+    }
+}
+
 Return<void> Power::setInteractive(bool interactive) {
     if (!initialized) {
         initialize();
     }
 
-    if (!interactive) {
-        int32_t panel_brightness = get(PANEL_BRIGHTNESS_NODE, -1);
+    int core_count = 4 + (interactive ? property_get_int64("8890.interactive_big_cores", 4) : property_get_int64("8890.idle_big_cores", 2));
 
-        if (panel_brightness > 0) {
-            LOG(VERBOSE) << "Moving to non-interactive state, but screen is still on,"
-                         << "not disabling input devices";
-            goto out;
-        }
-    }
+    set("/sys/power/cpuhotplug/max_online_cpu", core_count);
 
-out:
     for (const std::string& interactivePath : cpuInteractivePaths) {
         set(interactivePath + "/io_is_busy", interactive ? "1" : "0");
     }
-
-    set("/sys/power/cpuhotplug/max_online_cpu", interactive ? "8" : "6");
 
     return Void();
 }
@@ -145,6 +155,8 @@ void Power::initialize() {
     findInputNodes();
 
     setProfile(PowerProfile::BALANCED);
+
+    setProfileFromProp();
 
     for (const std::string& interactivePath : cpuInteractivePaths) {
         hispeed_freqs.emplace_back(get<std::string>(interactivePath + "/hispeed_freq", ""));

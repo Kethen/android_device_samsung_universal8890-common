@@ -1,0 +1,6 @@
+on zygote-start
+	# power_save, balanced, high_performance
+	setprop 8890.power_profile power_save
+	# 1-4
+	setprop 8890.interactive_big_cores 2
+	setprop 8890.idle_big_cores 1
