@@ -41,6 +41,7 @@ ro.mst.support                   u:object_r:vendor_init_mst_prop:s0
 # audio
 persist.vendor.audio.            u:object_r:vendor_audio_prop:s0
 audio_hal.                       u:object_r:vendor_audio_prop:s0
+8890.lifevibe_hack               u:object_r:vendor_audio_prop:s0
 
 # 8890 power
 8890.power_profile               u:object_r:vendor_power_prop:s0

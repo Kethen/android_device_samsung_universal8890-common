@@ -1,0 +1,3 @@
+on zygote-start
+	# to be overriden in ut
+	setprop 8890.lifevibes_hack 0
