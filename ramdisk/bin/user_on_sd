@@ -1,0 +1,5 @@
+#!/vendor/bin/sh
+if [ -e /dev/block/platform/15740000.dwmmc2/by-name/USERDATA_SD ]
+then
+	mount -o bind /vendor/etc/fstab.samsungexynos8890.sd /vendor/etc/fstab.samsungexynos8890
+fi
