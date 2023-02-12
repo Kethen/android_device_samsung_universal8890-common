@@ -1,5 +1,19 @@
 #!/vendor/bin/sh
+
+MOUNT_TARGET="/vendor/etc/fstab.samsungexynos8890"
+MOUNT_SRC="$MOUNT_TARGET"
+
+if [ -z "$(cat /system/build.prop | grep ro.system.build.version.sdk=32)" ] && [ -z "$(cat /system/build.prop | grep ro.system.build.version.sdk=31)" ] && [ -z "$(cat /system/build.prop | grep ro.system.build.version.sdk=30)" ]
+then
+	MOUNT_SRC="${MOUNT_SRC}.13"
+fi
+
 if [ -e /dev/block/platform/15740000.dwmmc2/by-name/USERDATA_SD ]
 then
-	mount -o bind /vendor/etc/fstab.samsungexynos8890.sd /vendor/etc/fstab.samsungexynos8890
+	MOUNT_SRC="${MOUNT_SRC}.sd"
+fi
+
+if [ "$MOUNT_TARGET" != "$MOUNT_SRC" ]
+then
+	mount -o bind "$MOUNT_SRC" "$MOUNT_TARGET"
 fi
