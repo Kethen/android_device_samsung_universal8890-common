@@ -279,7 +279,9 @@ PRODUCT_COPY_FILES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.samsungexynos8890 \
+    fstab.samsungexynos8890.13 \
     fstab.samsungexynos8890.sd \
+    fstab.samsungexynos8890.13.sd \
     init.recovery.samsungexynos8890.rc \
     init.samsung.rc \
     init.samsungexynos8890.rc \
