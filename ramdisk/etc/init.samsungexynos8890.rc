@@ -638,7 +638,17 @@ on charger
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor interactive
 
+service user_on_sd /vendor/bin/user_on_sd
+    disabled
+    oneshot
+    user root
+    group root
+    seclabel u:r:su:s0
+
 on fs
+    # support user data on sd
+    exec_start user_on_sd
+
     mount_all /vendor/etc/fstab.samsungexynos8890  --early
     swapon_all /vendor/etc/fstab.samsungexynos8890
 
