@@ -1,0 +1,18 @@
+#!/vendor/bin/sh
+# property hacks that have very muddy use, for example ro.kernel.ebpf.supported is technically a system prop, but it has to be defined in vendor for GSI usage
+
+# some ebpf disabling patches look for this
+setprop ro.kernel.ebpf.supported false
+
+# ask lmkd nicely to not use psi
+setprop ro.lmk.use_psi false
+
+# not sure what this is
+setprop ro.cmc.device_type pd
+
+# rild
+setprop ro.debug_level 0x494d
+setprop ro.hdcp2.rx tz
+
+# audio
+setprop ro.config.systemaudiodebug arizona
