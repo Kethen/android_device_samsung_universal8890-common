@@ -649,9 +649,19 @@ service user_on_sd /vendor/bin/user_on_sd
     group root
     seclabel u:r:su:s0
 
+service force_props /vendor/bin/force_props
+    disabled
+    oneshot
+    user root
+    group root
+    seclabel u:r:su:s0
+
 on fs
     # support user data on sd
     exec_start user_on_sd
+
+	# property hacks
+    exec_start force_props
 
     mount_all /vendor/etc/fstab.samsungexynos8890  --early
     swapon_all /vendor/etc/fstab.samsungexynos8890
