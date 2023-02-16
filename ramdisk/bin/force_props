@@ -1,0 +1,3 @@
+#!/vendor/bin/sh
+# property hacks that have very muddy use, for example ro.kernel.ebpf.supported is technically a system prop, but it has to be defined in vendor for GSI usage
+setprop ro.kernel.ebpf.supported false
