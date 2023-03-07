@@ -34,6 +34,10 @@ ifneq ($(filter hero2lte, $(TARGET_DEVICE)),)
 VENDOR_OUT_PATH := out/target/product/hero2lte/vendor
 endif
 
+ifneq ($(filter gracerlte, $(TARGET_DEVICE)),)
+VENDOR_OUT_PATH := out/target/product/hero2lte/vendor
+endif
+
 LOCAL_MODULE := symlinks-universal8890-common
 LOCAL_SRC_FILES := symlinks
 LOCAL_MODULE_CLASS := ETC
